@@ -1,5 +1,5 @@
 {
-    "cloudfront_log_in_creds": ["fogglab", "WizenedSquidCookout22"],
+    "cloudfront_dataset_creds": ["fogglab", "WizenedSquidCookout22"],
     "image_urls_by_set": {
         "https://d8t1d5fddm44b.cloudfront.net/data/211208_174527_Drug_screening_SIHA_plate1_08-Dec-2021_17-41-38": [
             "https://d8t1d5fddm44b.cloudfront.net/data/211208_174527_Drug_screening_SIHA_plate1_08-Dec-2021_17-41-38_0.zip",
