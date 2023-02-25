@@ -9,8 +9,7 @@ from pathlib import Path
 print("This script will download and extract the images from the dataset.")
 print(f"\nDefault output directory: {osp.join(os.getcwd(), 'data')}")
 
-output_dir = input(
-    f"\nSpecify output directory or leave blank for default: ")
+output_dir = input(f"\nSpecify output directory or leave blank for default: ")
 if output_dir == "":
     output_dir = osp.join(os.getcwd(), 'data')
 
