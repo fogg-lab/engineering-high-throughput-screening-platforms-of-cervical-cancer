@@ -5,7 +5,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-# Prompt the user for the output directory
+# Prompt for the output directory
 print("This script will download and extract the images from the dataset.")
 print(f"\nDefault output directory: {osp.join(os.getcwd(), 'data')}")
 
@@ -25,7 +25,7 @@ os.makedirs(output_dir, exist_ok=True)
 with open("dataset_urls.json", "r") as f:
     data = json.load(f)
 
-# Ask the user which sets of images to download (or all of them)
+# Ask which sets of images to download (or all of them)
 print("\nAvailable sets of images:")
 for i, set_name in enumerate(data["image_urls_by_set"].keys()):
     print(f"{i+1}. {set_name}")
