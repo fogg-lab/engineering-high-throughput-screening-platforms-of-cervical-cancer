@@ -12,7 +12,7 @@ MAX_PARALLEL_EXTRACTIONS = 3        # Maximum number of archives to extract simu
 DOWNLOAD_ATTEMPTS = 3               # Number of times to retry a download if it fails
 ABORT_ON_FAILED_DOWNLOAD = False    # Abort the script if a download fails
 
-# Async function to extract files and delete archive
+# Function to extract files and delete archive
 def decompress_and_delete(filepath):        
     with zipfile.ZipFile(filepath, "r") as zip_ref:
         zip_ref.extractall(osp.dirname(filepath))
@@ -35,16 +35,17 @@ def main():
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
-    # Load the JSON file
+    # Load the urls to the image archives
     with open("dataset_urls.json", "r") as f:
         urls_by_set = json.load(f)
 
-    # Ask which sets of images to download (or all of them)
     print("\nAvailable sets of images:")
     for i, set_name in enumerate(urls_by_set.keys()):
         print(f"{i+1}. {set_name}")
 
     print("\nNOTE: All image sets combined are ~1TB in size after extraction.")
+
+    # Ask which sets of images to download
 
     set_indices = input(
         "Enter a comma-separated list of set numbers to download or leave blank to download all sets: ")
@@ -64,7 +65,7 @@ def main():
             continue
 
         # Create a thread pool to decompress archives in parallel
-        # downloads will continue one at a time in the main thread
+        # Downloads will continue one at a time in the main thread
         decompression_thread_pool = ThreadPool(MAX_PARALLEL_EXTRACTIONS)
 
         # Create a subdirectory for this set of images
