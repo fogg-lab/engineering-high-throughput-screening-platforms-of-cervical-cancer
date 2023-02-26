@@ -36,7 +36,7 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     # Load the JSON file
-    with open("custom.json", "r") as f:
+    with open("dataset_urls.json", "r") as f:
         urls_by_set = json.load(f)
 
     # Ask which sets of images to download (or all of them)
