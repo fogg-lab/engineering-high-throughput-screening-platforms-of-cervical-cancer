@@ -10,7 +10,7 @@ from time import sleep
 
 MAX_PARALLEL_EXTRACTIONS = 3        # Maximum number of archives to extract simultaneously
 DOWNLOAD_ATTEMPTS = 3               # Number of times to retry a download if it fails
-ABORT_ON_FAILED_DOWNLOAD = False    # Abort the script if a download fails
+ABORT_ON_FAILED_DOWNLOAD = False    # Whether to abort the script if a download fails
 
 # Function to extract files and delete archive
 def decompress_and_delete(filepath):        
