@@ -2,7 +2,7 @@ import os
 import os.path as osp
 import json
 from multiprocessing import Pool as ThreadPool
-import urllib3.request
+import urllib3
 import zipfile
 from pathlib import Path
 
